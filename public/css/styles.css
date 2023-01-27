@@ -173,3 +173,7 @@ select {
 .boton-eliminar:focus {
   outline: none;
 }
+
+.text-color {
+  color: rgb(61, 173, 89);
+}
