@@ -25,7 +25,7 @@ const productos = [
     id: 3,
     nombre: "Canela",
     tipo: "canela",
-    desc: "´Por su poder antioxidante se ha utilizado durante muchísimo tiempo como conservante natural. Asimismo, es expectorante y posee propiedades analgésicas.",
+    desc: "Por su poder antioxidante se ha utilizado durante muchísimo tiempo como conservante natural. Asimismo, es expectorante y posee propiedades analgésicas.",
     precio: 400,
     gramos: "250",
     imagen: "../public/images/canela.jpg",

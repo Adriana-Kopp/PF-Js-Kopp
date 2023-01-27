@@ -5,11 +5,10 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 img {
-  width: 100%;
   margin-bottom: 10px;
   border-radius: 10px !important;
 }
@@ -25,7 +24,7 @@ header {
 }
 
 h1 {
-  color: rgb(225, 76, 65);
+  color: rgb(61, 173, 89);
   text-transform: uppercase;
   font-weight: 500px;
   font-size: 30px;
@@ -34,18 +33,18 @@ h1 {
 
 #cesta-carrito {
   border: none;
-  color: rgb(225, 76, 65);
+  color: rgb(61, 173, 89);
   font-size: 30px;
   background-color: white;
   border-radius: 50%;
   padding: 10px 20px;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 #cesta-carrito:hover {
   cursor: pointer;
   color: white;
-  background-color: rgb(225, 76, 65);
+  background-color: rgb(61, 173, 89);
 }
 
 #cesta-carrito:focus {
@@ -87,7 +86,7 @@ select {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all .5s;
+  transition: all 0.5s;
   opacity: 0;
   visibility: hidden;
   background-color: rgba(0, 0, 0, 0.3);
@@ -105,7 +104,7 @@ select {
   min-width: 500px;
   padding: 20px;
   margin-top: -100%;
-  transition: all .5s;
+  transition: all 0.5s;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
@@ -115,7 +114,7 @@ select {
 }
 
 .modal-carrito h3 {
-  color: rgb(225, 76, 65);
+  color: rgb(61, 173, 89);
   padding-bottom: 5px;
 }
 
@@ -124,7 +123,7 @@ select {
   top: 15px;
   right: 15px;
   font-size: 20px;
-  color: rgb(225, 76, 65) !important;
+  color: rgb(61, 173, 89) !important;
   border: none;
   background-color: white;
 }
@@ -142,8 +141,8 @@ select {
 }
 
 .card .card-image .card-title {
-  color: rgb(225, 76, 65);
-  position: unset
+  color: rgb(61, 173, 89);
+  position: unset;
 }
 
 .productoEnCarrito {
@@ -157,12 +156,12 @@ select {
 }
 
 .productoEnCarrito:hover {
-  border-left: 5px solid rgb(225, 76, 65);
+  border-left: 5px solid rgb(61, 173, 89);
 }
 
 .boton-eliminar {
   background-color: white;
-  color: #ff6961;
+  color: rgb(61, 173, 89);
   border: none;
   font-size: 20px;
 }
