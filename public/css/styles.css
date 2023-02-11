@@ -177,3 +177,7 @@ select {
 .text-color {
   color: rgb(61, 173, 89);
 }
+
+.swal2-styled.swal2-confirm {
+  background-color: rgb(61, 173, 89) !important;
+}
