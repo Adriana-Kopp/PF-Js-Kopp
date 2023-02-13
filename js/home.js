@@ -1,7 +1,7 @@
-const pintarProductos = (productos) => {
+const pintarProductos = (data) => {
   const contenedor = document.getElementById("producto-contenedor");
 
-  productos.forEach((producto) => {
+  data.forEach((producto) => {
     const div = document.createElement("div");
     div.classList.add("card");
     div.innerHTML += `<div class="card-image">
