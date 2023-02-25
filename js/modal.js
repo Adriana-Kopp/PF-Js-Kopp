@@ -37,7 +37,7 @@ modalCarrito.addEventListener("click", (e) => {
         cancelButtonText: "Cancelar",
       }).then((result) => {
         if (result.isConfirmed) {
-          vaciarCarito();
+          vaciarCarrito();
           Swal.fire(
             "Eliminado!",
             "El producto ha sido eliminado con éxito.",
