@@ -1,9 +1,12 @@
+//Pintamos los productos
 const pintarProductos = (data) => {
   const contenedor = document.getElementById("producto-contenedor");
 
   data.forEach((producto) => {
+    //Estructura
     const div = document.createElement("div");
     div.classList.add("card");
+    //Card Body + Título + Imagen + Precio+ Botón
     div.innerHTML += `<div class="card-image">
                           <img src=${producto.imagen}>
                           <span class="card-title">${producto.nombre}</span>

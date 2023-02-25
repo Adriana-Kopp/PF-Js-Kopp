@@ -91,6 +91,14 @@ const eliminarProductosCarrito = (productoId) => {
   actualizarTotalesCarrito(carrito);
 };
 
+const vaciarCarrito = () => {
+  carrito = [];
+  localStorage.clear("carrito");
+
+  pintarCarrito(carrito);
+  actualizarTotalesCarrito(carrito);
+};
+
 const guardarCarritoStorage = (carrito) => {
   localStorage.setItem("carrito", JSON.stringify(carrito));
 };
