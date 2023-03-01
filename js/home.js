@@ -1,12 +1,13 @@
-//Pintamos los productos
+//Pintamos los productos mediante JavaScript
 const pintarProductos = (data) => {
+  //Nustro contenedor (padre)
   const contenedor = document.getElementById("producto-contenedor");
 
   data.forEach((producto) => {
     //Estructura
     const div = document.createElement("div");
     div.classList.add("card");
-    //Card Body + Título + Imagen + Precio+ Botón
+    //Card Body con todo el contenido + Título + Imagen + Precio + Botón
     div.innerHTML += `<div class="card-image">
                           <img src=${producto.imagen}>
                           <span class="card-title">${producto.nombre}</span>
@@ -17,6 +18,7 @@ const pintarProductos = (data) => {
                             <p class="text-color">${producto.precio}</p>
                         </div>
                        `;
+    //Contenedor hijo
     contenedor.appendChild(div);
   });
 };

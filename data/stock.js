@@ -1,4 +1,4 @@
-// Variables
+// Array de objetos
 const productos = [
   {
     id: 1,

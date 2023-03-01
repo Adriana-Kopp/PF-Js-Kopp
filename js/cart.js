@@ -1,13 +1,16 @@
+//Array para mi carrito de compras
 let carrito = [];
 
 const productoContenedor = document.getElementById("producto-contenedor");
 
+//Nos permite saber sobre cual elemento el usuario hizo "click"
 productoContenedor.addEventListener("click", (e) => {
   if (e.target.classList.contains("agregar")) {
     validarProductoRepetido(e.target.id);
   }
 });
 
+//Validamos la cantidad del producto agregado
 const validarProductoRepetido = (productoId) => {
   const productoRepetido = carrito.find(
     (producto) => producto.id == productoId
@@ -22,6 +25,7 @@ const validarProductoRepetido = (productoId) => {
     carrito.push(producto);
     pintarProductoCarrito(producto);
     actualizarTotalesCarrito(carrito);
+    //Producto repetido si es que lo hay
   } else {
     productoRepetido.cantidad++;
     const cantidadProducto = document.getElementById(
@@ -32,6 +36,7 @@ const validarProductoRepetido = (productoId) => {
   }
 };
 
+//Pintamos el carrito con JavaScript
 const pintarProductoCarrito = (producto) => {
   const contenedor = document.getElementById("carrito-contenedor");
   const div = document.createElement("div");
@@ -42,11 +47,15 @@ const pintarProductoCarrito = (producto) => {
         <p id=cantidad${producto.id}>Cantidad: ${producto.cantidad}</p>
         <button class="btn waves-effect waves-ligth boton-eliminar" value="${producto.id}">X</button>
     `;
+  //Agregamos el elemento al DOM
   contenedor.appendChild(div);
 };
 
+//Total del carrito actualizado
 const actualizarTotalesCarrito = (carrito) => {
+  //Contador de la cantidad de productos en el carrito
   const totalCantidad = carrito.reduce((acc, item) => acc + item.cantidad, 0);
+  //Contador del total de la compra
   const totalCompra = carrito.reduce(
     (acc, item) => acc + item.precio * item.cantidad,
     0
@@ -56,6 +65,7 @@ const actualizarTotalesCarrito = (carrito) => {
   guardarCarritoStorage(carrito);
 };
 
+//Total del carrito (Precio total)
 const pintarTotalesCarrito = (totalCantidad, totalCompra) => {
   const contadorCarrito = document.getElementById("contador-carrito");
   const precioTotal = document.getElementById("precioTotal");
@@ -64,11 +74,14 @@ const pintarTotalesCarrito = (totalCantidad, totalCompra) => {
   precioTotal.innerText = totalCompra;
 };
 
+//Del carrito actualizado necesitamos pintarlo otra vez en el carrito
 const pintarCarrito = (carrito) => {
   const contenedor = document.getElementById("carrito-contenedor");
 
+  //Vaciamos el carrito
   contenedor.innerHTML = "";
 
+  //Pintamos el carrito otra vez
   carrito.forEach((producto) => {
     const div = document.createElement("div");
     div.classList.add("productoEnCarrito");
@@ -82,32 +95,39 @@ const pintarCarrito = (carrito) => {
   });
 };
 
+//Eliminamos elementos del carrito mediante su ID
 const eliminarProductosCarrito = (productoId) => {
   const productoIndex = carrito.findIndex(
     (producto) => producto.id == productoId
   );
   carrito.splice(productoIndex, 1);
   pintarCarrito(carrito);
+  //Actualizamos el precio y la cantidad
   actualizarTotalesCarrito(carrito);
 };
 
+//Vaciamos el carrito
 const vaciarCarrito = () => {
   carrito = [];
+  //Limpiamos el storage
   localStorage.clear("carrito");
 
   pintarCarrito(carrito);
   actualizarTotalesCarrito(carrito);
 };
 
+//Almacenamos dentro del Storage
 const guardarCarritoStorage = (carrito) => {
   localStorage.setItem("carrito", JSON.stringify(carrito));
 };
 
+//Obtenemos el storage del carrito
 const obtenerCarritoStorage = () => {
   const carritoStorage = JSON.parse(localStorage.getItem("carrito"));
   return carritoStorage;
 };
 
+//Cargamos el carrito
 const cargarCarrito = () => {
   if (localStorage.getItem("carrito")) {
     carrito = obtenerCarritoStorage();
@@ -117,6 +137,8 @@ const cargarCarrito = () => {
 };
 
 cargarCarrito();
+
+//Alertas de SweetAlert2
 
 const btn0 = document.querySelector("#cesta-carrito ");
 btn0.addEventListener("click", () => {
